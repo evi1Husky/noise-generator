@@ -2,6 +2,7 @@ import css from "./NoiseGenerator.module.css";
 import { Noise } from "../Noise/Noise";
 import { PlayButton } from "../PlayButton/PlayButton";
 import { NoiseButtons } from "../NoiseButtons/NoiseButtons";
+import { Oscilloscope } from "../Oscilloscope/Oscilloscope";
 import { useState, useRef, useEffect } from "react";
 import { NoiseType } from "../../types";
 import "../Knob/knob";
@@ -35,11 +36,15 @@ export const NoiseGenerator = () => {
           gainNode={gainNode.current}
         />
       )}
+      <Oscilloscope analyserNode={analyserNode.current} />
       <section className={css.noiseButtonsContainer}>
         <NoiseButtons noiseType={noiseType} setNoiseType={setNoiseType} />
       </section>
       <section className={css.playButtonAndKnobContainer}>
-        <control-knob ref={knob} knob-size={checkIfMobileScreen() ? "74" : "68"} />
+        <control-knob
+          ref={knob}
+          knob-size={checkIfMobileScreen() ? "74" : "68"}
+        />
         <PlayButton playing={playing} setPlaying={setPlaying} />
       </section>
     </main>

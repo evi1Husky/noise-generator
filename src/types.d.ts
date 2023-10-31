@@ -16,6 +16,10 @@ interface NoiseProps {
   gainNode: GainNode;
 }
 
+interface OscilloscopeProps {
+  analyserNode: AnalyserNode;
+}
+
 declare global {
   namespace JSX {
     interface IntrinsicElements {
@@ -27,4 +31,10 @@ declare global {
   }
 }
 
-export { NoiseType, NoiseButtonsProps, PlayButtonProps, NoiseProps };
+export {
+  NoiseType,
+  NoiseButtonsProps,
+  PlayButtonProps,
+  NoiseProps,
+  OscilloscopeProps,
+};
