@@ -1,0 +1,35 @@
+.button {
+  width: 7rem;
+  height: 7rem;
+  border-radius: 0.6rem;
+  box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
+  border: 0.1rem solid #464d5758;
+  font-family: Andale Mono, monospace;
+  font-size: 1.7rem;
+}
+
+.buttonInactive {
+  width: 7rem;
+  height: 7rem;
+  color: #464d57c0;
+  background-color: none;
+  filter: none;
+  border: 1px solid #464d5758;
+}
+
+.buttonActive {
+  width: 7.2rem;
+  height: 7.2rem;
+  color: #212529e7;
+  background-color: rgba(214, 229, 255, 1);
+  filter: drop-shadow(0 0 11px rgba(214, 229, 255, 0.23));
+  border: none;
+}
+
+.buttonInactive:hover {
+  border-color: #464d5775;
+}
+
+.buttonActive:hover {
+  filter: drop-shadow(0 0 11px rgba(214, 229, 255, 0.29));
+}
