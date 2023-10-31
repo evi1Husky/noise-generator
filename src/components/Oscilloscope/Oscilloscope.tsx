@@ -17,9 +17,9 @@ export const Oscilloscope = ({ analyserNode }: OscilloscopeProps) => {
       rect.height * window.devicePixelRatio);
     canvas.current!.style.width = `${rect.width}px`;
     canvas.current!.style.height = `${rect.height}px`;
+    context.fillStyle = "rgb(0,0,0)";
     context.strokeStyle = "rgb(214, 229, 255)";
     context.lineWidth = 2;
-
     const draw = () => {
       frame = window.requestAnimationFrame(draw);
       const numberOfValues = analyserNode.frequencyBinCount;
