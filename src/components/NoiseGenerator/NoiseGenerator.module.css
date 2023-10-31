@@ -12,7 +12,7 @@
 }
 
 .playButtonAndKnobContainer {
-  /* margin-top: 3rem; */
+  align-items: center;
   display: flex;
   gap: 3rem;
 }

@@ -16,4 +16,15 @@ interface NoiseProps {
   gainNode: GainNode;
 }
 
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      "control-knob": React.DetailedHTMLProps<
+        React.HTMLAttributes<HTMLElement>,
+        HTMLElement
+      >;
+    }
+  }
+}
+
 export { NoiseType, NoiseButtonsProps, PlayButtonProps, NoiseProps };
