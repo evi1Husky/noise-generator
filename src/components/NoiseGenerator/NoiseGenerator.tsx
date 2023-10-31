@@ -4,7 +4,8 @@ import { PlayButton } from "../PlayButton/PlayButton";
 import { NoiseButtons } from "../NoiseButtons/NoiseButtons";
 import { useState, useRef, useEffect } from "react";
 import { NoiseType } from "../../types";
-import "../Knob/knob"
+import "../Knob/knob";
+import { checkIfMobileScreen } from "../../utility";
 
 export const NoiseGenerator = () => {
   const [playing, setPlaying] = useState(false);
@@ -38,7 +39,7 @@ export const NoiseGenerator = () => {
         <NoiseButtons noiseType={noiseType} setNoiseType={setNoiseType} />
       </section>
       <section className={css.playButtonAndKnobContainer}>
-        <control-knob ref={knob} knob-size="68" />
+        <control-knob ref={knob} knob-size={checkIfMobileScreen() ? "74" : "68"} />
         <PlayButton playing={playing} setPlaying={setPlaying} />
       </section>
     </main>

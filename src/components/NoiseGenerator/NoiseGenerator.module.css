@@ -22,7 +22,7 @@
   flex-direction: column;
 }
 
-@media only screen and (max-width: 450px) {
+@media (max-width: 450px) {
   .noiseGenerator {
     width: 98%;
     height: 99%;
