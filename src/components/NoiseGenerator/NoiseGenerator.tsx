@@ -5,7 +5,8 @@ import { NoiseButtons } from "../NoiseButtons/NoiseButtons";
 import { DisplayButtons } from "../DisplayButtons/DisplayButtons";
 import { Oscilloscope } from "../Oscilloscope/Oscilloscope";
 import { StaticScreen } from "../Static/StaticScreen";
-import { useState, useRef, useEffect } from "react";
+import { BlackScreen } from "../BlackScreen/BlackScreen";
+import { useState, useRef, useEffect, ReactComponentElement } from "react";
 import { NoiseType, DisplayType } from "../../types";
 import "../Knob/knob";
 import { checkIfMobileScreen } from "../../utility";
@@ -30,6 +31,17 @@ export const NoiseGenerator = () => {
     };
   }, []);
 
+  const switchDisplayType = (displayType: string): JSX.Element => {
+    switch (displayType) {
+      case "static":
+        return <StaticScreen analyserNode={analyserNode.current} />;
+      case "waveform":
+        return <Oscilloscope analyserNode={analyserNode.current} />;
+      default:
+        return <BlackScreen />;
+    }
+  };
+
   return (
     <main className={css.noiseGenerator}>
       {playing && (
@@ -39,11 +51,7 @@ export const NoiseGenerator = () => {
           gainNode={gainNode.current}
         />
       )}
-      {displayType === "static" ? (
-        <StaticScreen analyserNode={analyserNode.current} />
-      ) : (
-        <Oscilloscope analyserNode={analyserNode.current} />
-      )}
+      {switchDisplayType(displayType)}
       <section className={css.displayButtonsContainer}>
         <DisplayButtons
           displayType={displayType}
@@ -56,7 +64,7 @@ export const NoiseGenerator = () => {
       <section className={css.playButtonAndKnobContainer}>
         <control-knob
           ref={knob}
-          knob-size={checkIfMobileScreen() ? "74" : "68"}
+          knob-size={checkIfMobileScreen() ? "73" : "60"}
         />
         <PlayButton playing={playing} setPlaying={setPlaying} />
       </section>

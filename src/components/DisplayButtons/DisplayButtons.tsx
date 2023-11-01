@@ -11,9 +11,12 @@ export const DisplayButtons = ({
 
   const waveform = displayType === "waveform" ? buttonActive : buttonInactive;
   const staticScreen = displayType === "static" ? buttonActive : buttonInactive;
+  const displayOff =
+    displayType === "displayOff" ? buttonActive : buttonInactive;
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const buttonValue = (event.target as HTMLButtonElement).value as DisplayType;
+    const buttonValue = (event.target as HTMLButtonElement)
+      .value as DisplayType;
     displayType !== buttonValue ? setDisplayType(buttonValue) : null;
   };
 
@@ -28,6 +31,13 @@ export const DisplayButtons = ({
       </button>
       <button value="static" className={staticScreen} onClick={handleClick}>
         static
+      </button>
+      <button
+        value="displayOff"
+        className={`${displayOff} ${buttonCSS.mediumFontSize}`}
+        onClick={handleClick}
+      >
+        display off
       </button>
     </section>
   );

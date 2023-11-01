@@ -1,16 +1,16 @@
 .button {
-  width: 7rem;
-  height: 7rem;
+  width: 6.5rem;
+  height: 6.5rem;
   border-radius: 0.6rem;
   box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.9);
   border: 0.1rem solid #464d5758;
   font-family: Andale Mono, monospace;
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 }
 
 .buttonInactive {
-  width: 7rem;
-  height: 7rem;
+  width: 6.5rem;
+  height: 6.5rem;
   color: #464d57c0;
   background-color: none;
   filter: none;
@@ -18,8 +18,8 @@
 }
 
 .buttonActive {
-  width: 7.2rem;
-  height: 7.2rem;
+  width: 6.7rem;
+  height: 6.7rem;
   color: #212529e7;
   background-color: rgba(214, 229, 255, 1);
   filter: drop-shadow(0 0 11px rgba(214, 229, 255, 0.23));
@@ -34,14 +34,19 @@
   filter: drop-shadow(0 0 11px rgba(214, 229, 255, 0.29));
 }
 
+.mediumFontSize {
+  font-size: 1.3rem;
+}
+
 .smallFontSize {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 450px) {
   .button {
     width: 8rem;
     height: 8rem;
+    font-size: 1.7rem;
   }
 
   .buttonInactive {
@@ -52,5 +57,13 @@
   .buttonActive {
     width: 8.2rem;
     height: 8.2rem;
+  }
+
+  .mediumFontSize {
+    font-size: 1.35rem;
+  }
+
+  .smallFontSize {
+    font-size: 1.25rem;
   }
 }

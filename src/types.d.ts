@@ -1,5 +1,5 @@
-type NoiseType = "white" | "pink" | "brown";
-type DisplayType = "waveform" | "static";
+type NoiseType = "white" | "pink" | "brown" | "grey" | "velvet" | "green";
+type DisplayType = "waveform" | "static" | "displayOff";
 
 interface NoiseButtonsProps {
   noiseType: NoiseType;

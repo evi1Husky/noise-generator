@@ -1,5 +1,5 @@
 .noiseGenerator {
-  width: 40rem;
+  width: 38rem;
   height: 60rem;
   background-color: var(--app);
   border: var(--appBorder);
@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .playButtonAndKnobContainer {
@@ -20,6 +20,7 @@
 .noiseButtonsContainer {
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 }
 
 .displayButtonsContainer {
