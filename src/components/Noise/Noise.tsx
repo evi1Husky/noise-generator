@@ -2,7 +2,7 @@ import { NoiseProps, NoiseType } from "../../types";
 import { useEffect } from "react";
 
 export const Noise = ({ noiseType, audioContext, gainNode, loading }: NoiseProps) => {
-  const sampleRate = audioContext.sampleRate * 300;
+  const sampleRate = audioContext.sampleRate * 120;
 
   /*
     to use multiple web workers concurrently make an array of promises with
