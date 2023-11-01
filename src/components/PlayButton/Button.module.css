@@ -34,6 +34,10 @@
   filter: drop-shadow(0 0 11px rgba(214, 229, 255, 0.29));
 }
 
+.smallFontSize {
+  font-size: 1.25rem;
+}
+
 @media (max-width: 450px) {
   .button {
     width: 8rem;

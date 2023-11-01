@@ -1,7 +1,0 @@
-.oscilloscope {
-  width: 90%;
-  height: 35%;
-  background: black;
-  border: var(--appBorder);
-  border-radius: 1.1rem;
-}

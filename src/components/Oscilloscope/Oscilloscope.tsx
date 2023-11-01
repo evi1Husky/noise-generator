@@ -1,14 +1,14 @@
-import css from "./Oscilloscope.module.css";
-import { OscilloscopeProps } from "../../types";
+import { CanvasComponentProps } from "../../types";
 import { useRef, useEffect } from "react";
 
-export const Oscilloscope = ({ analyserNode }: OscilloscopeProps) => {
+export const Oscilloscope = ({ analyserNode }: CanvasComponentProps) => {
   const canvas = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     const context = canvas.current!.getContext("2d", {
       alpha: false,
     }) as CanvasRenderingContext2D;
+    analyserNode.fftSize = 1024;
     let frame: number;
     const rect = canvas.current!.getBoundingClientRect();
     const width = (canvas.current!.width =
@@ -20,6 +20,7 @@ export const Oscilloscope = ({ analyserNode }: OscilloscopeProps) => {
     context.fillStyle = "rgb(0,0,0)";
     context.strokeStyle = "rgb(214, 229, 255)";
     context.lineWidth = 2;
+  
     const draw = () => {
       frame = window.requestAnimationFrame(draw);
       const numberOfValues = analyserNode.frequencyBinCount;
@@ -38,11 +39,13 @@ export const Oscilloscope = ({ analyserNode }: OscilloscopeProps) => {
       }
       context.stroke();
     };
+
     draw();
+
     return () => {
       window.cancelAnimationFrame(frame);
     };
   }, []);
 
-  return <canvas className={css.oscilloscope} ref={canvas}></canvas>;
+  return <canvas ref={canvas}></canvas>;
 };

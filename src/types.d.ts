@@ -1,8 +1,14 @@
 type NoiseType = "white" | "pink" | "brown";
+type DisplayType = "waveform" | "static";
 
 interface NoiseButtonsProps {
   noiseType: NoiseType;
   setNoiseType: React.Dispatch<React.SetStateAction<NoiseType>>;
+}
+
+interface DisplayButtonsProps {
+  displayType: DisplayType;
+  setDisplayType: React.Dispatch<React.SetStateAction<DisplayType>>;
 }
 
 interface PlayButtonProps {
@@ -16,7 +22,7 @@ interface NoiseProps {
   gainNode: GainNode;
 }
 
-interface OscilloscopeProps {
+interface CanvasComponentProps {
   analyserNode: AnalyserNode;
 }
 
@@ -33,8 +39,10 @@ declare global {
 
 export {
   NoiseType,
+  DisplayType,
   NoiseButtonsProps,
+  DisplayButtonsProps,
   PlayButtonProps,
   NoiseProps,
-  OscilloscopeProps,
+  CanvasComponentProps,
 };
