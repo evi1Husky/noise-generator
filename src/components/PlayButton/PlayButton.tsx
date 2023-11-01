@@ -1,9 +1,15 @@
 import css from "./Button.module.css";
 import { PlayButtonProps } from "../../types";
 
-export const PlayButton = ({ playing, setPlaying }: PlayButtonProps) => {
+export const PlayButton = ({
+  playing,
+  setPlaying,
+  loading,
+}: PlayButtonProps) => {
   const handleClick = () => {
-    !playing ? setPlaying(true) : setPlaying(false);
+    if (!loading.current) {
+      !playing ? setPlaying(true) : setPlaying(false);
+    }
   };
 
   const buttonActive = `${css.button} ${css.buttonActive}`;

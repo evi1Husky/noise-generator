@@ -5,6 +5,7 @@ import { NoiseButtonsProps, NoiseType } from "../../types";
 export const NoiseButtons = ({
   noiseType,
   setNoiseType,
+  loading,
 }: NoiseButtonsProps) => {
   const buttonActive = `${buttonCSS.button} ${buttonCSS.buttonActive}`;
   const buttonInactive = `${buttonCSS.button} ${buttonCSS.buttonInactive}`;
@@ -17,8 +18,11 @@ export const NoiseButtons = ({
   const green = noiseType === "green" ? buttonActive : buttonInactive;
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    const buttonValue = (event.target as HTMLButtonElement).value as NoiseType;
-    noiseType !== buttonValue ? setNoiseType(buttonValue) : null;
+    if (!loading.current) {
+      const buttonValue = (event.target as HTMLButtonElement)
+        .value as NoiseType;
+      noiseType !== buttonValue ? setNoiseType(buttonValue) : null;
+    }
   };
 
   return (

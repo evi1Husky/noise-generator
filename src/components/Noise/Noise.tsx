@@ -1,7 +1,7 @@
 import { NoiseProps, NoiseType } from "../../types";
 import { useEffect } from "react";
 
-export const Noise = ({ noiseType, audioContext, gainNode }: NoiseProps) => {
+export const Noise = ({ noiseType, audioContext, gainNode, loading }: NoiseProps) => {
   const sampleRate = audioContext.sampleRate * 300;
 
   /*
@@ -29,6 +29,7 @@ export const Noise = ({ noiseType, audioContext, gainNode }: NoiseProps) => {
   }
 
   useEffect(() => {
+    loading.current = true
     const buffers: Promise<Float32Array>[] = [
       makeNoiseBuffer(noiseType, sampleRate),
       makeNoiseBuffer(noiseType, sampleRate),
@@ -44,9 +45,9 @@ export const Noise = ({ noiseType, audioContext, gainNode }: NoiseProps) => {
       buffer.copyToChannel(values[1].value, 1);
       noise.buffer = buffer;
       noise.connect(gainNode);
-      gainNode.connect(audioContext.destination);
       noise.loop = true;
       noise.start(0);
+      loading.current = false;
     });
     return () => {
       noise.stop();

@@ -34,3 +34,14 @@
     height: 99%;
   }
 }
+
+@media only screen and (max-width: 450px) and (min-height: 750px) {
+  .noiseGenerator {
+
+    gap: 3rem;
+  }
+
+  .noiseButtonsContainer {
+    gap: 3rem;
+  }
+}

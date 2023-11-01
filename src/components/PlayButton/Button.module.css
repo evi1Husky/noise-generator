@@ -67,3 +67,29 @@
     font-size: 1.25rem;
   }
 }
+
+@media only screen and (max-width: 450px) and (max-height: 700px) {
+  .button {
+    width: 7rem;
+    height: 7rem;
+    font-size: 1.7rem;
+  }
+
+  .buttonInactive {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .buttonActive {
+    width: 7.2rem;
+    height: 7.2rem;
+  }
+
+  .mediumFontSize {
+    font-size: 1.35rem;
+  }
+
+  .smallFontSize {
+    font-size: 1.25rem;
+  }
+}

@@ -4,6 +4,7 @@ type DisplayType = "waveform" | "static" | "displayOff";
 interface NoiseButtonsProps {
   noiseType: NoiseType;
   setNoiseType: React.Dispatch<React.SetStateAction<NoiseType>>;
+  loading: React.MutableRefObject<boolean>
 }
 
 interface DisplayButtonsProps {
@@ -14,12 +15,14 @@ interface DisplayButtonsProps {
 interface PlayButtonProps {
   playing: boolean;
   setPlaying: React.Dispatch<React.SetStateAction<boolean>>;
+  loading: React.MutableRefObject<boolean>;
 }
 
 interface NoiseProps {
   noiseType: NoiseType;
   audioContext: AudioContext;
   gainNode: GainNode;
+  loading: React.MutableRefObject<boolean>;
 }
 
 interface CanvasComponentProps {

@@ -21,6 +21,8 @@ export const NoiseGenerator = () => {
   const analyserNode = useRef(audioContext.current.createAnalyser());
   const knob = useRef<any>(null);
 
+  const loading = useRef(false);
+
   useEffect(() => {
     gainNode.current.connect(audioContext.current.destination);
     gainNode.current.connect(analyserNode.current);
@@ -49,6 +51,7 @@ export const NoiseGenerator = () => {
           noiseType={noiseType}
           audioContext={audioContext.current}
           gainNode={gainNode.current}
+          loading={loading}
         />
       )}
       {switchDisplayType(displayType)}
@@ -59,14 +62,22 @@ export const NoiseGenerator = () => {
         />
       </section>
       <section className={css.noiseButtonsContainer}>
-        <NoiseButtons noiseType={noiseType} setNoiseType={setNoiseType} />
+        <NoiseButtons
+          noiseType={noiseType}
+          setNoiseType={setNoiseType}
+          loading={loading}
+        />
       </section>
       <section className={css.playButtonAndKnobContainer}>
         <control-knob
           ref={knob}
-          knob-size={checkIfMobileScreen() ? "73" : "60"}
+          knob-size={checkIfMobileScreen() ? "65" : "59"}
         />
-        <PlayButton playing={playing} setPlaying={setPlaying} />
+        <PlayButton
+          playing={playing}
+          setPlaying={setPlaying}
+          loading={loading}
+        />
       </section>
     </main>
   );
