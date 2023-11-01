@@ -8,7 +8,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 3rem;
 }
 
 .playButtonAndKnobContainer {
@@ -20,7 +20,7 @@
 .noiseButtonsContainer {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 3rem;
 }
 
 .displayButtonsContainer {
@@ -35,13 +35,3 @@
   }
 }
 
-@media only screen and (max-width: 450px) and (min-height: 750px) {
-  .noiseGenerator {
-
-    gap: 3rem;
-  }
-
-  .noiseButtonsContainer {
-    gap: 3rem;
-  }
-}

@@ -56,15 +56,6 @@
       case "brown":
         noise = brownianNoise(e.data.sampleRate);
         break;
-      case "grey":
-        noise = brownianNoise(e.data.sampleRate);
-        break;
-      case "velvet":
-        noise = brownianNoise(e.data.sampleRate);
-        break;
-      case "green":
-        noise = brownianNoise(e.data.sampleRate);
-        break;
     }
     // @ts-ignore
     postMessage(noise, [noise.buffer]);
