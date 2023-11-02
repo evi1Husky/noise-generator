@@ -1,27 +1,19 @@
-# React + TypeScript + Vite
+# Noise Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Noise generation app built with React and Web Audio API, featuring procedural
+generation of white, pink and brown noise.
 
-Currently, two official plugins are available:
+## features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* multi channel, long, lossless audio buffers for white, pink and brown noise
+* processing buffers for each channel using async concurrent web workers
+* two audio data visualisation display modes: oscilloscope and static screen
+* installable progressive web app features
 
-## Expanding the ESLint configuration
+## made with
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+* react: 18.2.0
+* typescript: 5.0.2
+* vite: 4.4.5
+* vite-plugin-pwa: 0.16.6
+* css cmodules
