@@ -16,4 +16,4 @@ generation of white, pink and brown noise.
 * typescript: 5.0.2
 * vite: 4.4.5
 * vite-plugin-pwa: 0.16.6
-* css cmodules
+* css modules
